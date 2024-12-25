@@ -16,10 +16,17 @@ public class FunWithSorting {
 		cars.add(car3);
 		cars.add(car4);
 		
+		System.out.println("Before sort...");
 		for(Car car: cars) {
 			System.out.println(car);
 		}
+		System.out.println();
 		
 		Collections.sort(cars);
+		
+		System.out.println("After sort...");
+		for(Car car: cars) {
+			System.out.println(car);
+		}
 	}
 }

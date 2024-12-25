@@ -1,6 +1,6 @@
 package funwithsorting;
 
-public class Car {
+public class Car implements Comparable<Car> {
 	private String brand; // BMW, VW, Peugeot, Ferrari
 	private String model; // M5, Golf
 	private String color; // red, green, blue
@@ -45,6 +45,11 @@ public class Car {
 	@Override
 	public String toString() {
 		return "Car [brand=" + brand + ", model=" + model + ", color=" + color + ", topSpeed=" + topSpeed + "]";
+	}
+	
+	@Override
+	public int compareTo(Car other) {
+		return this.brand.compareTo(other.brand);
 	}
 	
 	
