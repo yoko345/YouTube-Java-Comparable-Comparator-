@@ -5,7 +5,7 @@ public class Car implements Comparable<Car> {
 	private String model; // M5, Golf
 	private String color; // red, green, blue
 	private int topSpeed;
-	
+
 	public Car(String brand, String model, String color, int topSpeed) {
 		super();
 		this.brand = brand;
@@ -13,31 +13,35 @@ public class Car implements Comparable<Car> {
 		this.color = color;
 		this.topSpeed = topSpeed;
 	}
-	
+
 	public String getBrand() {
 		return brand;
 	}
+
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-	
+
 	public String getModel() {
 		return model;
 	}
+
 	public void setModel(String model) {
 		this.model = model;
 	}
-	
+
 	public String getColor() {
 		return color;
 	}
+
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+
 	public int getTopSpeed() {
 		return topSpeed;
 	}
+
 	public void setTopSpeed(int topSpeed) {
 		this.topSpeed = topSpeed;
 	}
@@ -46,11 +50,10 @@ public class Car implements Comparable<Car> {
 	public String toString() {
 		return "Car [brand=" + brand + ", model=" + model + ", color=" + color + ", topSpeed=" + topSpeed + "]";
 	}
-	
+
 	@Override
 	public int compareTo(Car other) {
 		return this.brand.compareTo(other.brand);
 	}
-	
-	
+
 }
