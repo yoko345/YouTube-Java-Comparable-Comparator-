@@ -1,6 +1,7 @@
 package funwithsorting;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -11,11 +12,12 @@ public class FunWithSorting {
 		Car car3 = new Car("BMW", "320i", "black", 212);
 		Car car4 = new Car("Tesla", "Model S", "red", 250);
 
-		ArrayList<Car> cars = new ArrayList<Car>();
-		cars.add(car1);
-		cars.add(car2);
-		cars.add(car3);
-		cars.add(car4);
+		// ArrayList<Car> cars = new ArrayList<Car>();
+		// cars.add(car1);
+		// cars.add(car2);
+		// cars.add(car3);
+		// cars.add(car4);
+		Car[] cars = { car1, car2, car3, car4 };
 
 		System.out.println("Before sort...");
 		for (Car car : cars) {
@@ -30,8 +32,14 @@ public class FunWithSorting {
 		// ラムダ式の利用ができるようになってから
 		Comparator<Car> bySpeed = (Car carObj1, Car carObj2) -> carObj1.getTopSpeed() - carObj2.getTopSpeed();
 		// Collections.sort(cars, bySpeed);
-		Comparator<Car> byColor = (Car carObj1, Car carObj2) -> carObj1.getColor().compareTo(carObj2.getColor());
-		Collections.sort(cars, byColor);
+		// Comparator<Car> byColor = (Car carObj1, Car carObj2) -> carObj1.getColor().compareTo(carObj2.getColor());
+		// Collections.sort(cars, byColor);
+
+		// Arrays.sort(cars);
+		// Arrays.sort(cars, carSortBrand);
+		// Arrays.sort(cars, byColor);
+		// Arrays.sort(cars, Collections.reverseOrder());
+		Arrays.sort(cars, Collections.reverseOrder(bySpeed));
 
 		System.out.println("After sort...");
 		for (Car car : cars) {
