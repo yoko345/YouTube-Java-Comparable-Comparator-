@@ -2,6 +2,7 @@ package funwithsorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class FunWithSorting {
 	public static void main(String[] args) {
@@ -22,8 +23,15 @@ public class FunWithSorting {
 		}
 		System.out.println();
 
-		CarComparatorBrand carSortBrand = new CarComparatorBrand();
-		Collections.sort(cars, carSortBrand); // Comparatorインタフェースを使用した場合は、実装クラスを第二引数に持ってくる
+		// Java 8 までの記述方法
+		// CarComparatorBrand carSortBrand = new CarComparatorBrand();
+		// Collections.sort(cars, carSortBrand);
+
+		// ラムダ式の利用ができるようになってから
+		Comparator<Car> bySpeed = (Car carObj1, Car carObj2) -> carObj1.getTopSpeed() - carObj2.getTopSpeed();
+		// Collections.sort(cars, bySpeed);
+		Comparator<Car> byColor = (Car carObj1, Car carObj2) -> carObj1.getColor().compareTo(carObj2.getColor());
+		Collections.sort(cars, byColor);
 
 		System.out.println("After sort...");
 		for (Car car : cars) {
